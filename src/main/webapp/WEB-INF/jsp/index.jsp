@@ -51,7 +51,7 @@
     let mainBtn = document.getElementById("main-btn");
 
     mainBtn.onclick = () => {
-        alert("Пiшов нахуii");
+        alert("js test");
     }
 </script>
 
