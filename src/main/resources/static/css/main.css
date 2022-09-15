@@ -1,11 +1,17 @@
 h1{
-    color:#0000FF;
+    color: #6b5702;
 }
 
 h2{
-    color:#FF0000;
+    color: #cb0a27;
 }
 
 .nav-font-30px{
     font-size: 30px;
+}
+
+.starter-template{
+    text-align: center;
+    margin: auto;
+    border: 1px solid #FF0000;
 }
