@@ -36,8 +36,13 @@
 
     <div class="starter-template">
         <h1>Spring Boot Web JSP Example</h1>
-        <h2>Message: ${login}</h2>
+        <h2>Message: ${userName}</h2>
     </div>
+
+    <h1>Result</h1>
+    <p th:text="'id: ' + ${greeting.id}" />
+    <p th:text="'content: ' + ${greeting.content}" />
+    <a href="/greeting">Submit another message</a>
 
 </div>
 

@@ -32,22 +32,26 @@
 
     <div class="starter-template">
         <h1>Task and project management system</h1>
-        <h2>${message}</h2>
-        <form style="width: 40%; margin: auto;" th:action="@{/auth}">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Логин</label>
-                <input name="login" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Логин">
-<%--            </div>--%>
-<%--            <div class="form-group">--%>
-<%--                <label for="exampleInputPassword1">Пароль</label>--%>
-<%--                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">--%>
-<%--            </div>--%>
-<%--            <br>--%>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        <p>${userName}</p>
+        <p>${userRole}</p>
+
     </div>
 
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Создать задачу</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Список проектов</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Мои задачи</a>
+        </li>
+    </ul>
+
 </div>
+
+
 
 
 </body>
