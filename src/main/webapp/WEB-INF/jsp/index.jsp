@@ -30,12 +30,12 @@
 
 <div class="container">
 
-    <div class="starter-template">
-        <h1>Task and project management system</h1>
-        <p>${userName}</p>
-        <p>${userRole}</p>
+<%--    <div class="starter-template">--%>
+<%--        <h1>Task and project management system</h1>--%>
+<%--        <p>${userName}</p>--%>
+<%--        <p>${userRole}</p>--%>
 
-    </div>
+<%--    </div>--%>
 
     <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -47,6 +47,12 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Мои задачи</a>
         </li>
+    </ul>
+
+    <ul>
+        <c:forEach var="user" items="${users}">
+            <li><c:out value="${user}" /></li>
+        </c:forEach>
     </ul>
 
 </div>
