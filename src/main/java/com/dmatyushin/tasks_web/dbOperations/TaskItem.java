@@ -1,6 +1,8 @@
 package com.dmatyushin.tasks_web.dbOperations;
 
 import javax.persistence.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name="tasks")
@@ -65,8 +67,11 @@ public class TaskItem {
         this.taskExecutor = taskExecutor;
     }
 
-    public long getCreateDate() {
-        return createDate;
+    public String getCreateDate() {
+        Date time = new Date(this.createDate * 1000);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        String formattedDate = sdf.format(time);
+        return formattedDate;
     }
 
     public void setCreateDate(long createDate) {

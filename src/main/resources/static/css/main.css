@@ -15,3 +15,22 @@ h2{
     margin: auto;
     border: 1px solid #FF0000;
 }
+
+.container{
+    text-align: center;
+    margin: auto;
+}
+
+.tasks-table{
+    table-layout: fixed;
+    width: 100%;
+    /*text-align: center;*/
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid blue;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
