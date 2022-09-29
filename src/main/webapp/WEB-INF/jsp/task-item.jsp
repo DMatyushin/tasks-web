@@ -32,52 +32,38 @@
 
 
     <jsp:include page="nav-menu.jsp" />
-<%--    <form method = "POST" modelAttribute="taskForm" action = "/modifyTask">--%>
-<%--        <table id="task-item-table" class="table table-bordered border-dark table-hover">--%>
-<%--            <tr>--%>
-<%--                <td class="task-table-title"><label path = "id">ID</label></td>--%>
-<%--                <td class="task-table-body"><input path = "id" value="${id}" readonly/></td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td class="task-table-title"><label path = "taskTitle">Title</label></td>--%>
-<%--                <td class="task-table-body"><input path = "taskTitle" value="${taskTitle}"/></td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td class="task-table-title"><label path = "taskAuthor">Author</label></td>--%>
-<%--                <td class="task-table-body"><input path = "taskAuthor" value="${taskAuthor}"/></td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td class="task-table-title"><label path = "taskExecutor">Executor</label></td>--%>
-<%--                <td class="task-table-body"><input path = "taskExecutor" value="${taskExecutor}"/></td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td class="task-table-title"><label path = "taskDescription">Description</label></td>--%>
-<%--                <td class="task-table-body"><input path = "taskDescription" value="${taskDescription}" /></td>--%>
-<%--            </tr>--%>
-<%--            <tr>--%>
-<%--                <td colspan = "2">--%>
-<%--                    <input class="btn btn-primary" type = "submit" value = "Обновить"/>--%>
-<%--                    <input class="btn btn-warning" type = "delete" value = "Удалить"/>--%>
-<%--                </td>--%>
-<%--            </tr>--%>
-<%--        </table>--%>
-<%--    </form>--%>
-    <form action="/modifyTask" method="post" >
-        <pre>
-            Id <input type="text" name="id" value="${id}" readonly/>
-            Author <input type="text" name="taskAuthor" value="${author}" readonly/>
-            Title <input type="text" name="taskTitle" value="${title}"/>
-            Description <input type="text" name="taskDescription" value="${description}" />
-            Executor <input type="text" name="taskExecutor" value="${executor}" />
-            <td><input type="submit" name="submit" value="Submit" /></td>
-            <td><input type="submit" name="delete" value="Delete" /></td>
-        </pre>
-    </form>
+
+        <form class="task-form" action="/modifyTask" method="post" >
+            <div class="input-group mb-3">
+                <span class="input-group-text" >ID</span>
+                <input class="form-control" type="text" name="id" value="${id}" readonly/>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" >Автор</span>
+                <input class="form-control" type="text" name="taskAuthor" value="${author}" readonly/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" >Название</span>
+                <input class="form-control" type="text" name="taskTitle" value="${title}"/>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" >Исполнитель</span>
+                <input class="form-control" type="text" name="taskExecutor" value="${executor}" />
+            </div>
+
+            <p style="text-align: center">Описание</p>
+            <div class="input-group mb-3">
+                <textarea style="height: 350px" class="form-control" name="taskDescription" >${description}</textarea>
+            </div>
+
+            <input type="submit" name="submit" value="Submit" class="btn btn-primary" />
+            <input type="submit" name="delete" value="Delete" class="btn btn-danger" />
+        </form>
+
 
 </div>
-
-
-
 
 </body>
 

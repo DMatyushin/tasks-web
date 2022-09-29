@@ -47,3 +47,11 @@ table {
 .task-table-body{
     width: 80%;
 }
+
+.task-form{
+    margin: auto;
+    width: 45%;
+    padding: 5px;
+    border: 1px solid lightgrey;
+}
+

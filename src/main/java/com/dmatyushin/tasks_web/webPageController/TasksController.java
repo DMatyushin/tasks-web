@@ -2,7 +2,6 @@ package com.dmatyushin.tasks_web.webPageController;
 
 import com.dmatyushin.tasks_web.dbOperations.TaskItem;
 import com.dmatyushin.tasks_web.dbOperations.TaskRepository;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +28,7 @@ public class TasksController {
     public String createTask(TaskItem taskItem, ModelMap model) {
 
         taskItem.setCreateDate(Instant.now().getEpochSecond());
-        TaskItem newTaskItem = this.taskRepository.save(taskItem);
+        this.taskRepository.save(taskItem);
 
         model.addAttribute("result", "Задача создана");
 
@@ -39,7 +38,7 @@ public class TasksController {
     @GetMapping("/task/{id}")
     public String showTask(@PathVariable("id") Integer id, ModelMap model) {
 
-        if(!taskRepository.findById(id).isPresent()) {
+        if(taskRepository.findById(id).isEmpty()) {
             model.addAttribute("result", "Задача не найдена");
             return "result";
         }
@@ -57,8 +56,18 @@ public class TasksController {
 
     @RequestMapping(value = "/modifyTask", method = RequestMethod.POST, params = "submit")
     public String updateTask(TaskItem t, ModelMap model) {
+        System.out.println(t.getId());
+        System.out.println(t.getTaskTitle());
+        System.out.println(t.getTaskDescription());
 
-        this.taskRepository.save(t);
+        Optional<TaskItem> taskToUpdateOptional = this.taskRepository.findById(t.getId());
+        TaskItem taskToUpdate = taskToUpdateOptional.get();
+
+        taskToUpdate.setTaskTitle(t.getTaskTitle());
+        taskToUpdate.setTaskDescription(t.getTaskDescription());
+        taskToUpdate.setTaskExecutor(t.getTaskExecutor());
+
+        this.taskRepository.save(taskToUpdate);
 
         model.addAttribute("result", "Задача обновлена");
 
