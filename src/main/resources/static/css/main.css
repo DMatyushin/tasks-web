@@ -34,3 +34,16 @@ table {
     table-layout: fixed;
     word-wrap: break-word;
 }
+
+#task-item-table{
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.task-table-title{
+    width: 10%;
+}
+
+.task-table-body{
+    width: 80%;
+}

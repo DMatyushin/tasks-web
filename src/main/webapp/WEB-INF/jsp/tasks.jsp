@@ -50,8 +50,8 @@
 <%--        </c:forEach>--%>
 <%--    </ul>--%>
 
-    <table class="table table-bordered border-primary table-hover">
-        <tr class="table-secondary">
+    <table class="table table-bordered border-dark table-hover">
+        <tr>
             <th style="width: 5%" scope="col">id</th>
             <th style="width: 20%" scope="col">Название</th>
             <th style="width: 30%" scope="col">Описание</th>
@@ -59,7 +59,6 @@
             <th style="width: 15%" scope="col">Исполнитель</th>
             <th style="width: 15%" scope="col">Дата создания</th>
         </tr>
-        <tbody class="table-group-divider">
         <c:forEach var="task" items="${tasks}">
             <tr>
                 <td><c:out value="${task.id}"/></td>

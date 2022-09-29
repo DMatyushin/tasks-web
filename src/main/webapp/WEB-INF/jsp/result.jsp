@@ -25,7 +25,7 @@
 
 <div class="container">
     <jsp:include page="nav-menu.jsp" />
-    <p>Задача создана.</p>
+    <p>${result}</p>
 </div>
 
 
